@@ -17,7 +17,11 @@ def process():
   print location
   print language
   print comment
-  return render_template('result.html')
+  return render_template('result.html', name=request.form['name'], location=request.form['location'],   language=request.form['language'], comment=request.form['comment'])
+  # return redirect('/')
+
+@app.route('/result',methods=['GET'])
+def result():
   return redirect('/')
 
 app.run(debug=True)
